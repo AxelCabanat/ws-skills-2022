@@ -34,7 +34,14 @@ Il est à noter que si certaines sont rencontrées quotidiennement (201 : create
 "Un Endpoint est ce qu’on appelle une extrémité d’un canal de communication.
 Dans le cadre d'une API, cette dernière interagit avec un autre système (comme par exemple une base de données), les points de contact de cette communication sont considérés comme des Endpoints. Ils représentent l’endroit où les API envoient les demandes et où réside la ressource et sont caractérisés par un chemin d'accès propre."
 
-- CORS ❌ / ✔️
+- CORS ✔️
+
+"On dit que deux URL ont des origines différentes si elles ne partagent pas le même hôte / port.
+Par défaut, une application n'est pas autorisée à utiliser les ressources d'une autre origine, sauf si on le lui précise. Ainsi, un front et un back tournant sur des domaines différents ne pourront pas communiquer.
+
+Par l'utilisation de CORS (ou Cross-Origin Resource Sharing) par notre server, ce dernier peut alors recevoir des données en provenance du côté client."
+
+
 - la nomenclature recommandée pour les routes ✔️
 
   "A titre d'illustration, nous prendrons ici l'exemple d'un site fictif "https://monsite.com" (Toute référence à un site réel sera dans le cas présent tout à fait fortuite).
