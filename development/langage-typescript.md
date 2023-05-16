@@ -22,7 +22,14 @@ Si des types élaborés existent pour décrie différents évènements, les type
 - comment et pourquoi étendre une interface ✔️
 Dans TypeScript, une interface est une construction qui déclare des normes. Les classes dérivées d'une interface doivent être conformes aux normes imposées par l'interface. Ainsi, une interface étendu pourra rajouter des spécificité à une classe à portée plus large.
 
-- les classes et les decorators ❌ / ✔️
+- les classes et les decorators ✔️
+
+TypeScript est du JavaScript orienté objet. Il prend en charge les fonctionnalités de programmation orientées objet telles que les classes, les interfaces, etc.
+Une classe en termes de programmation orienté objet est un modèle pour la création d’objets. Une classe encapsule les données de l’objet. 
+
+Un décorateur TypeScript est une annotation permettant d’altérer du code au moment de sa déclaration.
+Il commence généralement par un @ suivi du nom du décorateur. Ce concept est notamment utilisé par des framework comme Angular ou Nest.
+Par exemple une classe décorée par le décorateur Component permet de décrire le composant et d’indiquer à Angular que cette classe doit être considérée comme un composant.
 
 ## 💻 J'utilise
 
