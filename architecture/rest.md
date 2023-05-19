@@ -60,13 +60,24 @@ Par l'utilisation de CORS (ou Cross-Origin Resource Sharing) par notre server, c
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté ✔️
+Définition du endpoint en API REST
+```javascript
+app.get("/api/counters", CounterController.getAllCounters);
+```
 
+Définition de la query en API GraphQL
+```javascript
+    @Query(() => [Counter])
+  async getAllCounters(): Promise<Counter[]> {
+    return await CounterController.getAllCounters();
+  }
+```
 ### Utilisation dans un projet ❌ / ✔️
 
-[lien github](...)
+[lien github](https://github.com/WildCodeSchool/2209-wns-adleman-bordolamif)
 
-Description :
+Description : Projet de soutenance du titre
 
 ### Utilisation en production si applicable❌ / ✔️
 
