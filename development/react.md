@@ -22,20 +22,83 @@
 
 "Le hook useEffect permet de déclencher des instructions en fonction du cycle de vie du composant (lors de son montage ou de son démontage) mais également lors de l'actualisation d'un valeur. Pour effectuer l'équivalement d'un componentDidMount(), le hook prendra un tableau de dépendance vide en argument. La logique de componentWillUnmount() se trouvera dans un return dans le scope du hook. Si nous voulons que la logique du hook s'applique lorsque qu'une valeur change, il nous faudra mettre cette variable dans le tableau de dépendance pour que useEffect écoute l'état de cette dernière."
 
-- l'usage d'un reducer (_useReducer_) pour gérer un état composé dans un composant ❌ / ✔️
+- l'usage d'un reducer (_useReducer_) pour gérer un état composé dans un composant ✔️
+
+Le hook useReducer permet d'associer plusieurs traitements logiques à un state.
+Comme illustré ci-dessous, une fonction reducer concentrera les différents traitements à appliquer au state à l'appel du dispatch
+```javascript
+import { useReducer } from 'react';
+
+function reducer(state, action) {
+  if (action.type === 'incremented_age') {
+    return {
+      age: state.age + 1
+    };
+  }
+    if (action.type === 'decremented_age') {
+    return {
+      age: state.age - 1
+    };
+  }
+  throw Error('Unknown action.');
+}
+
+export default function Counter() {
+  const [state, dispatch] = useReducer(reducer, { age: 32 });
+
+  return (
+    <>
+      <button onClick={() => {
+        dispatch({ type: 'incremented_age' })
+      }}>
+        Increment age
+      </button>
+            <button onClick={() => {
+        dispatch({ type: 'decremented_age' })
+      }}>
+        Decrement age
+      </button>
+      <p>Hello! You are {state.age}.</p>
+    </>
+  );
+}
+
+```
+
 - l'état stocké dans un composant avec un _context provider_ et accessible dans ses descendants via `useContext` ✔️
 
 "Un context est un espace dans lequel peuvent être stockés des données et traitements logiques. A chaque context est associé un provider matérialisé sous forme de balises qui viendra englober le scope du contenu du provider. Ainsi un composant compris entre les balises d'un provider pourra faire appel au contenu de son context sans passer par une transmisson de props. Les enfants d'un composant exposé au provider se verront bénéficier des mêmes accès au context que leur parent."
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté ✔️
 
-### Utilisation dans un projet ❌ / ✔️
+Hook custom destiné à gérer le comportement des fenêtres modales
 
-[lien github](...)
+```javascript
+import { useState } from 'react';
 
-Description :
+const useModal = () => {
+    // initialisation du state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // fonction commandant l'ouverture de la modale
+  const openModal = () => setIsModalOpen(true);
+
+    // fonction commandant la fermeture de la modale
+  const closeModal = () => setIsModalOpen(false);
+
+    // Elements accessibles via l'appel du hook
+  return { isModalOpen, openModal, closeModal };
+};
+
+export default useModal;
+```
+### Utilisation dans un projet ✔️
+
+[lien github](https://github.com/WildCodeSchool/2209-wns-adleman-bordolamif)
+
+Description : Projet de soutenance du titre professionnel concepteur développeur d'application
 
 ### Utilisation en production si applicable❌ / ✔️
 
