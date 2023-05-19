@@ -61,23 +61,75 @@ Par l'utilisation de CORS (ou Cross-Origin Resource Sharing) par notre server, c
 ## 💻 J'utilise
 
 ### Un exemple personnel commenté ✔️
-Définition du endpoint en API REST
+
+Définition des routes 
+
 ```javascript
-app.get("/api/counters", CounterController.getAllCounters);
+const usersRouter = require("./User");
+const surveyRouter = require("./Survey");
+const studiosRouter = require("./Studio");
+const videosRouter = require("./Video");
+
+const setupRoutes = (app) => {
+  // Home Page
+  app.get("/api", (req, res) => {
+    res.send("Welcome to WCS Express + REACT starter project");
+  });
+
+  // Users routes
+  app.use("/api/users", usersRouter);
+
+  // Questions routes
+  app.use("/api/surveys", surveyRouter);
+  
+  //Studios route
+  app.use("/api/studios", studiosRouter);
+
+  //Videos route
+  app.use("/api/videos", videosRouter);
+};
+
+module.exports = setupRoutes;
 ```
 
-Définition de la query en API GraphQL
+extrait du UserRouter
 ```javascript
-    @Query(() => [Counter])
-  async getAllCounters(): Promise<Counter[]> {
-    return await CounterController.getAllCounters();
+const router = require("express").Router();
+const UserModel = require("../models/user");
+
+/**
+ * Returns the whole user list
+ */
+router.get("/", async (req, res) => {
+  res.send(await UserModel.findAll());
+});
+
+/**
+ * Register
+ */
+router.post("/register", async (req, res) => {
+  const { username, email, password } = req.body;
+
+  try {
+    await UserModel.createUser(username, email, password);
+    res.status(201).send("created");
+  } catch (e) {
+    if (e.meta) {
+      res.status(400).send(e.meta.message);
+    } else if (e.sqlMessage) {
+      res.status(400).send([{ message: e.sqlMessage }]);
+    } else {
+      res.status(500).send("Unexpected error");
+    }
   }
+});
 ```
+
 ### Utilisation dans un projet ❌ / ✔️
 
-[lien github](https://github.com/WildCodeSchool/2209-wns-adleman-bordolamif)
+[lien github](https://github.com/AxelCabanat/spot-on)
 
-Description : Projet de soutenance du titre
+Description : Projet de soutenance du titre professionnel développeur web et web mobile
 
 ### Utilisation en production si applicable❌ / ✔️
 

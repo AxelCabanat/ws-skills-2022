@@ -45,13 +45,8 @@ Une subscription GraphQL permet la lecteur de la base de données mais à la dif
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté ✔️
 
-### Utilisation dans un projet ✔️
-
-[lien github](https://github.com/WildCodeSchool/2209-wns-adleman-bordolamif)
-
-Description :
 
 UserQuery côté frontend (définition du schéma)
 
@@ -112,6 +107,12 @@ export class UserResolver {
 
   ...}
 ```
+
+### Utilisation dans un projet ✔️
+
+[lien github](https://github.com/WildCodeSchool/2209-wns-adleman-bordolamif)
+
+Description : Projet de soutenance du titre professionnel concepteur développeur d'application
 
 
 ### Utilisation en production si applicable❌ / ✔️
