@@ -22,17 +22,21 @@
 
 "La fonction "git rebase" permet de récupérer l'historique de commit d'une branche. Ainsi, afin d'intégrer nos commit dans la chronologie de la branche sur laquelle se base notre code, cette commande est utilisée pour s'intégrer dans une autre continuité de celle de notre branche."
 
-- utiliser les gitHub actions ❌ / ✔️
+- utiliser les gitHub actions ✔️
+
+GitHub Actions est un service d'automatisation intégré à la plateforme GitHub. Il permet aux développeurs de définir et d'exécuter des flux de travail automatisés pour leurs projets. Les GitHub Actions sont déclenchées par des événements spécifiques, tels que les pushs de code, les créations de Pull Requests, les créations de tags, etc. Elles permettent d'automatiser des tâches courantes comme la construction, les tests, le déploiement, les notifications, etc.
+
+Pour plus de détails sur leurs utilisations, se référer à la partie dédiée à la CI.
 
 ## 💻 J'utilise
 
 ### Un exemple personnel commenté ❌ / ✔️
 
-### Utilisation dans un projet ❌ / ✔️
+### Utilisation dans un projet ✔️
 
-[lien github](...)
+[lien github](https://github.com/WildCodeSchool/2209-wns-adleman-bordolamif)
 
-Description :
+Description : Projet de soutenance du titre professionnel concepteur développeur d'application
 
 ### Utilisation en production si applicable❌ / ✔️
 
