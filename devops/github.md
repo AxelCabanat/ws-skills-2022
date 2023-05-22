@@ -30,7 +30,77 @@ Pour plus de détails sur leurs utilisations, se référer à la partie dédiée
 
 ## 💻 J'utilise
 
-### Un exemple personnel commenté ❌ / ✔️
+### Un exemple personnel commenté ✔️
+
+```bash
+
+Cab@DESKTOP-IRQO7E4 MINGW64 ~/Documents/Wild/2209-wns-adleman-bordolamif (develop)
+# mise à jour de la branche mère
+$ git pull origin develop
+remote: Enumerating objects: 93, done.
+remote: Counting objects: 100% (93/93), done.
+remote: Compressing objects: 100% (48/48), done.
+remote: Total 77 (delta 53), reused 40 (delta 28), pack-reused 0
+Unpacking objects: 100% (77/77), 22.02 KiB | 410.00 KiB/s, done.
+From https://github.com/WildCodeSchool/2209-wns-adleman-bordolamif
+ * branch            develop    -> FETCH_HEAD
+   7addeef..2bd9907  develop    -> origin/develop
+Updating 7addeef..2bd9907
+Fast-forward
+# détail des changements
+
+Cab@DESKTOP-IRQO7E4 MINGW64 ~/Documents/Wild/2209-wns-adleman-bordolamif (develop)
+# création de la nouvelle branche et déplacement vers cette dernière
+$ git checkout -b 262-synthese-vocale
+Switched to a new branch '262-synthese-vocale'
+
+Cab@DESKTOP-IRQO7E4 MINGW64 ~/Documents/Wild/2209-wns-adleman-bordolamif (262-synthese-vocale)
+# indexation des changements développés
+$ git add .
+
+Cab@DESKTOP-IRQO7E4 MINGW64 ~/Documents/Wild/2209-wns-adleman-bordolamif (262-synthese-vocale)
+# commit du code indexé
+$ git commit -m "fix counterResolver"
+[262-synthese-vocale c143897] fix counterResolver
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+Cab@DESKTOP-IRQO7E4 MINGW64 ~/Documents/Wild/2209-wns-adleman-bordolamif (262-synthese-vocale)
+$ git add .
+
+Cab@DESKTOP-IRQO7E4 MINGW64 ~/Documents/Wild/2209-wns-adleman-bordolamif (262-synthese-vocale)
+$ git commit -m "fix expo access token use & add vocal synthesis to tv screen"
+[262-synthese-vocale 1a4fb3f] fix expo access token use & add vocal synthesis to tv screen
+ 5 files changed, 35 insertions(+), 4 deletions(-)
+ create mode 100644 client_web/src/utils/speak.ts
+
+Cab@DESKTOP-IRQO7E4 MINGW64 ~/Documents/Wild/2209-wns-adleman-bordolamif (262-synthese-vocale)
+# récupération des mises à jour de la branche mère (aucun changement ici)
+$ git pull origin develop
+From https://github.com/WildCodeSchool/2209-wns-adleman-bordolamif
+ * branch            develop    -> FETCH_HEAD
+Already up to date.
+
+Cab@DESKTOP-IRQO7E4 MINGW64 ~/Documents/Wild/2209-wns-adleman-bordolamif (262-synthese-vocale)
+# envoi des commits sur une branche distante dédiée
+$ git push origin 262-synthese-vocale
+Enumerating objects: 36, done.
+Counting objects: 100% (36/36), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (21/21), done.
+Writing objects: 100% (21/21), 2.37 KiB | 2.37 MiB/s, done.
+Total 21 (delta 17), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (17/17), completed with 15 local objects.
+remote:
+remote: Create a pull request for '262-synthese-vocale' on GitHub by visiting:
+remote:      https://github.com/WildCodeSchool/2209-wns-adleman-bordolamif/pull/new/262-synthese-vocale
+remote:
+remote: GitHub found 4 vulnerabilities on WildCodeSchool/2209-wns-adleman-bordolamif's default branch (2 high, 2 moderate). To find out more, visit:
+remote:      https://github.com/WildCodeSchool/2209-wns-adleman-bordolamif/security/dependabot
+remote:
+To https://github.com/WildCodeSchool/2209-wns-adleman-bordolamif.git
+ * [new branch]      262-synthese-vocale -> 262-synthese-vocale
+```
+Une pull request est ensuite créée sur GitHub pour demander le merge de la branche sur develop sous condition de l'approbation des collaborateurs.
 
 ### Utilisation dans un projet ✔️
 
